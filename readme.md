@@ -29,4 +29,4 @@ This repo is dedicated to documenting my journey as I learn one of the fastest-g
 ---------------
 [video-link](https://www.youtube.com/playlist?list=PLRAV69dS1uWQGDQoBYMZWKjzuhCaOnBpa)
 
-video-number := [1,2,3,4,5,6,7]
+video-number := [1,2,3,4,5,6,7,8]
