@@ -9,6 +9,7 @@ import (
 
 func main() {
 	PerfornGET()
+	PerfornPOST()
 }
 
 func PerfornGET() {
@@ -28,4 +29,23 @@ func PerfornGET() {
 	byteCount, _ := responseString.Write(content)
 	fmt.Println("the byteCount is : ", byteCount)
 	fmt.Println(responseString.String())
+}
+
+func PerfornPOST() {
+	const myurl = "http://localhost:3000/post"
+
+	// JSON payload
+	reqestBody := strings.NewReader(`
+		{
+			"courseName": "fullstack",
+			"name": "tejas"
+		}
+	`)
+	res, err := http.Post(myurl, "application/json", reqestBody)
+	if err != nil {
+		panic(err)
+	}
+	defer res.Body.Close()
+	content, _ := io.ReadAll(res.Body)
+	fmt.Println(string(content))
 }
