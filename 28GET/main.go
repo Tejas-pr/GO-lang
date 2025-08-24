@@ -4,12 +4,14 @@ import (
 	"fmt"
 	"io"
 	"net/http"
+	"net/url"
 	"strings"
 )
 
 func main() {
-	PerfornGET()
-	PerfornPOST()
+	// PerfornGET()
+	// PerfornPOST()
+	PerfornPOSTFormRequest()
 }
 
 func PerfornGET() {
@@ -47,5 +49,23 @@ func PerfornPOST() {
 	}
 	defer res.Body.Close()
 	content, _ := io.ReadAll(res.Body)
+	fmt.Println(string(content))
+}
+
+func PerfornPOSTFormRequest() {
+	const myurl = "http://localhost:3000/post"
+
+	//form data
+	data := url.Values{}
+	data.Add("firstName", "tejas")
+	data.Add("lastName", "PR")
+	data.Add("email", "tejas@gmail.com")
+
+	res, err := http.PostForm(myurl, data)
+	if err != nil {
+		panic(err)
+	}
+	content, _ := io.ReadAll(res.Body)
+	defer res.Body.Close()
 	fmt.Println(string(content))
 }
