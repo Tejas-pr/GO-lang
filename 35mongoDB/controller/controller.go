@@ -10,6 +10,7 @@ import (
 	"os"
 
 	"github.com/gorilla/mux"
+	"github.com/joho/godotenv"
 	"go.mongodb.org/mongo-driver/bson"
 	"go.mongodb.org/mongo-driver/bson/primitive"
 	"go.mongodb.org/mongo-driver/mongo"
@@ -17,17 +18,20 @@ import (
 )
 
 var (
-	connectionString = os.Getenv("DB_URL")
-	dbName           = "netflix"
-	collectionName   = "watchlist"
-	collections      *mongo.Collection
+	dbName         = "netflix"
+	collectionName = "watchlist"
+	collections    *mongo.Collection
 )
 
 func init() {
+	err := godotenv.Load(".env")
+	if err != nil {
+		log.Fatalf("Error loading .env file")
+	}
+	connectionString := os.Getenv("DB_URL")
 	if connectionString == "" {
 		log.Fatal("DB_URL is not set in environment variables")
 	}
-
 	clientOptions := options.Client().ApplyURI(connectionString)
 	client, err := mongo.Connect(context.TODO(), clientOptions)
 	if err != nil {
