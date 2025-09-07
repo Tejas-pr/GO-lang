@@ -23,10 +23,9 @@ This repo is dedicated to documenting my journey as I learn one of the fastest-g
 4. ✅ Explore Go modules and package management
 5. ✅ Develop REST APIs using Go
 6. ✅ Learn Go testing and error handling
-7. ⏳ Build small projects (see below)
-8. ⏳ Contribute to open-source Go projects
+7. ✅ Build small projects (see below)
 
 ---------------
 [video-link](https://www.youtube.com/playlist?list=PLRAV69dS1uWQGDQoBYMZWKjzuhCaOnBpa)
 
-video-number := [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,]
+video-number := [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57]
